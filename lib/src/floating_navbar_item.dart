@@ -10,4 +10,14 @@ class FloatingNavbarItem {
     this.title,
     this.customWidget,
   }) : assert(icon != null || customWidget != null);
+
+  @override
+  bool operator ==(Object other) {
+    return other is FloatingNavbarItem &&
+        other.title == title &&
+        other.icon == icon;
+  }
+
+  @override
+  int get hashCode => title.hashCode ^ icon.hashCode;
 }
